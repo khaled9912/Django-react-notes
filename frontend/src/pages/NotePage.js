@@ -3,7 +3,7 @@ import { ReactComponent as ArrowLeft } from '../assets/arrow-left.svg'
 import { Link } from 'react-router-dom'
 
 const NotePage = ({ match, history }) => {
-
+    let URL = 'https://dj-react-notes.herokuapp.com';
     let noteId = match.params.id
     let [note, setNote] = useState(null)
 
@@ -17,14 +17,14 @@ const NotePage = ({ match, history }) => {
     let getNote = async () => {
         if (noteId === 'new') return
 
-        let response = await fetch(`/api/notes/${noteId}/`)
+        let response = await fetch(URL+`/api/notes/${noteId}/`)
         let data = await response.json()
         setNote(data)
     }
 
 
     let createNote = async () => {
-        fetch(`/api/notes/`, {
+        fetch(URL+`/api/notes/`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ const NotePage = ({ match, history }) => {
 
 
     let updateNote = async () => {
-        fetch(`/api/notes/${noteId}/`, {
+        fetch(URL+`/api/notes/${noteId}/`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ const NotePage = ({ match, history }) => {
 
 
     let deleteNote = async () => {
-        fetch(`/api/notes/${noteId}/`, {
+        fetch(URL+`/api/notes/${noteId}/`, {
             method: 'DELETE',
             'headers': {
                 'Content-Type': 'application/json'
