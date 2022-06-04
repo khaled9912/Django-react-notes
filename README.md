@@ -8,13 +8,13 @@
 
 --> Clone the repository using the command below :
 ```bash
-git clone https://github.com/divanov11/Django-React-NotesApp.git
+git clone https://github.com/khaled9912/Django-react-notes.git
 
 ```
 
 --> Move into the directory where we have the project files : 
 ```bash
-cd Django-React-NotesApp
+cd Django-react-notes
 
 ```
 
