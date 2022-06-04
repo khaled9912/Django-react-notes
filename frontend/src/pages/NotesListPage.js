@@ -4,7 +4,7 @@ import AddButton from '../components/AddButton'
 
 
 const NotesListPage = () => {
-    let URL = 'https://dj-react-notes.herokuapp.com';
+    let URL = 'https://dj-react-notes.herokuapp.com/api/';
 
     let [notes, setNotes] = useState([])
 
@@ -15,7 +15,7 @@ const NotesListPage = () => {
 
     let getNotes = async () => {
 
-        let response = await fetch(URL+'/api/notes/')
+        let response = await fetch(URL+'notes/')
         let data = await response.json()
         setNotes(data)
     }
